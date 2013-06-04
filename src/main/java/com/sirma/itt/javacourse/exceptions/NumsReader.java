@@ -37,7 +37,11 @@ public final class NumsReader {
 				System.out.print("Input a number: ");
 				int temp = scn.nextInt();
 				if ((temp < 0) || (temp > 100)) {
-					throw new InputOutOfBoundariesException();
+					String endLine = System.getProperty("line.separator");
+					throw new InputOutOfBoundariesException(endLine
+							+ "The input number "
+							+ temp
+							+ " is out of the exptehcted borders 0 to 100");
 				}
 				list.add(temp);
 				count--;

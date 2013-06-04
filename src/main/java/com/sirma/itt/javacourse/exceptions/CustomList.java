@@ -36,7 +36,8 @@ public class CustomList {
 	 */
 	public void add(Object obj) throws FullListException {
 		if ((top + 1) >= size) {
-			throw new FullListException();
+			throw new FullListException(
+					"The operation add() is invalid for a full list");
 		}
 		array[++top] = obj;
 	}
@@ -49,7 +50,8 @@ public class CustomList {
 	 */
 	public void remove() throws EmptyListException {
 		if (top == -1) {
-			throw new EmptyListException();
+			throw new EmptyListException(
+					"The operation remove() is invalid for an empty list");
 		}
 		// set the topmost element to null and decrease the top variable by one
 		array[top--] = null;
@@ -63,7 +65,8 @@ public class CustomList {
 	 */
 	public void printAllElements() throws EmptyListException {
 		if (top == -1) {
-			throw new EmptyListException();
+			throw new EmptyListException(
+					"The requsetsed operation is invalid for an empty list");
 		}
 		System.out.print("[");
 		for (int i = 0; i <= top; i++) {
